@@ -12,9 +12,9 @@
 from random import choice
 import string
 
-def generador_contraseñas(tamaño=8, mayusculas=False, numeros=False, simbolos=False):
+def generador_contraseñas(longitud=8, mayusculas=False, numeros=False, simbolos=False):
     caracteres = string.ascii_letters
-    if tamaño< 8 or tamaño > 16:
+    if longitud< 8 or longitud > 16:
         print(f"error el tamaño permitido es de 8-16 caracteres")
         return None
     if mayusculas:
@@ -23,9 +23,9 @@ def generador_contraseñas(tamaño=8, mayusculas=False, numeros=False, simbolos=
         caracteres += string.digits
     if simbolos:
         caracteres += string.punctuation
-        
+
     # Elegir caracteres aleatorios de la lista de caracteres
-    contraseña = "".join((choice(caracteres)) for i in range(tamaño))
+    contraseña = "".join((choice(caracteres)) for i in range(longitud))
     return contraseña
 
 print(generador_contraseñas(15, True, True, True))
